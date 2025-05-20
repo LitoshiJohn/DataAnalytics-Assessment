@@ -15,8 +15,8 @@ Q1.
 Q2.
 -Frequency based on average transactions per month.
 -I'll use CTEs again to organise my work.
--Tge base CTE has all the columns needed for the query and that's where I apply all my filters and groups.
-- I sum the transactions for each user. (count the transaction references since each reference is unique)
+-The base CTE has all the columns needed for the query and that's where I apply all my filters and groups.
+- I sum the transactions for each user. (count the transaction references since each reference is unique).
 -The eggs CTE has more aggregate data. I use a timediff function to get the number of months a user has had an account(subtract the current date month from the month they joined)
 -I divide the transactions by the timediff to get the average number of transactions per month for each user.
 -A separate CTE is needed for the frequencies.
@@ -32,3 +32,25 @@ Q3.
 -Filter only for successful transactions.
 -To count inactivity days, I'd need to get the difference in time between the last transaction date and the current date.
 -As per the previous questions, I lay out the expected output and identify what tables are necessary for each of them.
+
+Q4.
+-Customer Lifetime Value has a formula, so I will break the query into various CTEs. This will give a very structured flow to the query 
+-What is CLV? = (total transactions/months)*12*(confirmed amount/100)*(0.1/100). Confirmed amount is divided by 100 to get the Naira value.
+-The confirmed amount is aimed per owner_id which is renamed to customer_id.
+-Outline the expected output and the tables they can be gotten from.
+-CONCAT user first and last names.
+-Get the monthly timediff between the date joined and the current date.
+-Count transaction references as total transactions.
+-Divide the total transactions by the tenure to get the transactions per tenure.
+-In the proceeding CTE, use the formula above to obtain the estimated clv.
+-Final statement will contain all data from the last CTE.
+-Filters are applied in the first CTE, this makes the query faster by only fetching the needed data.
+
+
+Challenges faced
+
+I did face 1 challenge. My SQL experience has evolved around Blockchain analytics, using Snowflake SQL for Flipside Crypto and Postgre SQL for Dune Analytics. Switching to MySQL was a bit challenging in the way queries are written. Certain statements I wrote were not suited for MySQL.
+
+To overcome the challenge, I'd use an AI chat bot to review any line of the query that was not suited to MySQL. I'll be taking a Udemy course or watch some YouTube videos on MySQL to   build my knowledge of MySQL.
+
+Thank you.
