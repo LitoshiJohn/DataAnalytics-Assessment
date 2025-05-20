@@ -15,4 +15,10 @@ Q1.
 Q2.
 -Frequency based on average transactions per month.
 -I'll use CTEs again to organise my work.
--Tge base CTE has all the columns needed for the query and that's where I apply all my filters 
+-Tge base CTE has all the columns needed for the query and that's where I apply all my filters and groups.
+- I sum the transactions for each user. (count the transaction references since each reference is unique)
+-The eggs CTE has more aggregate data. I use a timediff function to get the number of months a user has had an account(subtract the current date month from the month they joined)
+-I divide the transactions by the timediff to get the average number of transactions per month for each user.
+-A separate CTE is needed for the frequencies.
+-I would use a CASE statement to define the ranges for each frequency.
+-
