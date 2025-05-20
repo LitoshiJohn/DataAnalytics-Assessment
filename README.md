@@ -1,4 +1,4 @@
-This will serve as proof of my thoughts process for each question.
+This will serve as proof of my thought process for each question.
 
 Q1.
 -The first thing I note is that only customers with both savings AND investment plans are wanted.
