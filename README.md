@@ -21,4 +21,14 @@ Q2.
 -I divide the transactions by the timediff to get the average number of transactions per month for each user.
 -A separate CTE is needed for the frequencies.
 -I would use a CASE statement to define the ranges for each frequency.
--
+-fir the final statement, count the users and take an average of the transactions per month of every user in each category. Group by the frequency.
+-I used Transactions/Months as a more accurate measure of the average transactions per month.
+
+Q3.
+-For ACTIVE accounts with no transaction in the last 1 year, they must not be archived, deleted or deleted from groups.
+-Look for transaction dates older than 365 days (txn date > 365)
+-Only look at Savings and Investment accounts, per the question.
+-To ensure the last transaction is older than a year, I will use the MAX aggregate function in the transaction date column. This will give the last transaction and the filter tx date > 365 is applied here.
+-Filter only for successful transactions.
+-To count inactivity days, I'd need to get the difference in time between the last transaction date and the current date.
+-As per the previous questions, I lay out the expected output and identify what tables are necessary for each of them.
